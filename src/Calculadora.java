@@ -5,6 +5,9 @@ public class Calculadora {
 	public int som(int num1, int num2) {
 		return num1 + num2;
 	}  
+	public int sub(int num1, int num2){
+		return num1 - num2;
+	}  
 
 	public static void main(String[] args) {
 		Calculadora c = new Calculadora();
@@ -15,11 +18,12 @@ public class Calculadora {
 
 		Scanner input = new Scanner(System.in);
 		System.out.println("-Escolha uma opção-");  
-		System.out.println("1. Soma");  	
+		System.out.println("1. Soma"); 
+		System.out.println("2. Subtracao");    
 		System.out.println("0. Sair");    
-        System.out.println("Operação: ");    
-          
-        opcao = input.nextInt();  
+		System.out.println("Operação: ");    
+
+		opcao = input.nextInt();  
 
 		while (opcao != 0) {
 			Scanner input1 = new Scanner(System.in);    
@@ -33,11 +37,15 @@ public class Calculadora {
 				int operacao = c.som(num1, num2);
 				System.out.printf("\nO resultado da soma é: %d\n", operacao);  
 				break;  
-			}else{  
+			}else if (opcao == 2) { 
+				int operacao = c.sub(num1, num2);
+				System.out.printf("\nO resultado da subtração é: %d\n", operacao);  
+				break;  
+			}  
+			else{  
 				System.out.println("????");  
 				break;  
 			}      
 		}
-
 	}
 }
